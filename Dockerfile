@@ -12,6 +12,7 @@ RUN mkdir /var/www/demo
 ADD myproject.py /var/www/demo/myproject.py
 ADD wsgi.py /var/www/demo/wsgi.py
 ADD myproject /etc/nginx/sites-available/
+ADD gunicorn.conf /etc/
 
 RUN rm -f /etc/nginx/sites-enabled/default && \
     ln -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
